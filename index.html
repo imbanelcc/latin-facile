@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latin Facile - Apprendre le Latin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>🏛️ Latin Facile</h1>
+        <p>Ton compagnon d'apprentissage du latin</p>
+    </header>
+
+    <nav>
+        <button class="nav-btn active" data-section="declensions">Déclinaisons</button>
+        <button class="nav-btn" data-section="conjugations">Conjugaisons</button>
+        <button class="nav-btn" data-section="lexicon">Lexique</button>
+        <button class="nav-btn" data-section="exercises">Exercices</button>
+    </nav>
+
+    <main>
+        <!-- Section Déclinaisons -->
+        <section id="declensions" class="content-section active">
+            <h2>📚 Tableaux de Déclinaisons</h2>
+            
+            <div class="selector">
+                <label>Choisir une déclinaison :</label>
+                <select id="declension-select">
+                    <option value="1">1ère déclinaison (rosa, -ae)</option>
+                    <option value="2m">2ème déclinaison masculin (dominus, -i)</option>
+                    <option value="2n">2ème déclinaison neutre (templum, -i)</option>
+                    <option value="3">3ème déclinaison (rex, regis)</option>
+                    <option value="3n">3ème déclinaison neutre (corpus, corporis)</option>
+                    <option value="4">4ème déclinaison (manus, -us)</option>
+                    <option value="5">5ème déclinaison (res, rei)</option>
+                </select>
+            </div>
+
+            <div id="declension-table"></div>
+        </section>
+
+        <!-- Section Conjugaisons -->
+        <section id="conjugations" class="content-section">
+            <h2>✍️ Tableaux de Conjugaisons</h2>
+            
+            <div class="selector">
+                <label>Choisir une conjugaison :</label>
+                <select id="conjugation-select">
+                    <option value="1">1ère conjugaison (amo, amare)</option>
+                    <option value="2">2ème conjugaison (moneo, monere)</option>
+                    <option value="3">3ème conjugaison (lego, legere)</option>
+                    <option value="3m">3ème mixte (capio, capere)</option>
+                    <option value="4">4ème conjugaison (audio, audire)</option>
+                </select>
+            </div>
+
+            <div class="voice-selector">
+                <button class="voice-btn active" data-voice="active">Voix Active</button>
+                <button class="voice-btn" data-voice="passive">Voix Passive</button>
+            </div>
+
+            <div class="tense-selector">
+                <button class="tense-btn active" data-tense="present">Présent</button>
+                <button class="tense-btn" data-tense="imperfect">Imparfait</button>
+            </div>
+
+            <div id="conjugation-table"></div>
+        </section>
+
+        <!-- Section Lexique -->
+        <section id="lexicon" class="content-section">
+            <h2>📖 Lexique Latin-Français</h2>
+            
+            <div class="search-box">
+                <input type="text" id="lexicon-search" placeholder="Rechercher un mot latin...">
+                <button id="search-btn">🔍 Rechercher</button>
+            </div>
+
+            <div class="filter-btns">
+                <button class="filter-btn active" data-type="all">Tous</button>
+                <button class="filter-btn" data-type="noun">Noms</button>
+                <button class="filter-btn" data-type="verb">Verbes</button>
+                <button class="filter-btn" data-type="adj">Adjectifs</button>
+            </div>
+
+            <div id="lexicon-results"></div>
+        </section>
+
+        <!-- Section Exercices -->
+        <section id="exercises" class="content-section">
+            <h2>🎯 Exercices d'Entraînement</h2>
+            
+            <div class="exercise-options">
+                <h3>Générer un exercice :</h3>
+                <div class="option-group">
+                    <label>Type d'exercice :</label>
+                    <select id="exercise-type">
+                        <option value="declension">Déclinaisons</option>
+                        <option value="conjugation">Conjugaisons</option>
+                        <option value="vocabulary">Vocabulaire</option>
+                        <option value="translation">Traduction</option>
+                    </select>
+                </div>
+                <div class="option-group">
+                    <label>Nombre de questions :</label>
+                    <select id="exercise-count">
+                        <option value="5">5 questions</option>
+                        <option value="10" selected>10 questions</option>
+                        <option value="15">15 questions</option>
+                        <option value="20">20 questions</option>
+                    </select>
+                </div>
+                <button id="generate-exercise">Générer l'exercice</button>
+            </div>
+
+            <div id="exercise-content"></div>
+            <div id="exercise-results"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Latin Facile - Fait avec ❤️ pour l'apprentissage du latin</p>
+    </footer>
+
+    <script src="js/declensions.js"></script>
+    <script src="js/conjugations.js"></script>
+    <script src="js/lexicon.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
